@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nit: 1
+  phone: MyString
+  address: MyString
+  neightborhood_id: 
+
+two:
+  name: MyString
+  nit: 1
+  phone: MyString
+  address: MyString
+  neightborhood_id: 
