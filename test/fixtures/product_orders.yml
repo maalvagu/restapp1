@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  count_product: 1
+  order_id: 
+  restaurant_product_id: 
+
+two:
+  count_product: 1
+  order_id: 
+  restaurant_product_id: 
