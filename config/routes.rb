@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
+  get 'publics/index'
+
+  get 'publics/search'
+
+  get 'publics/contact'
+
+  get 'publics/about_us'
+
   resources :orders
 
   resources :products
 
-  resources :restaurants
+  resources :restaurants do 
+      collection do
+        get 'list_for_city'   #Cargar el método con el nombre del controlador
+      end
+  end
 
   resources :users
-
-  resources :neightborhoods
 
   resources :cities
 
@@ -17,7 +27,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'restaurants#index'
+  # root 'restaurants#index'
+  root 'publics#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

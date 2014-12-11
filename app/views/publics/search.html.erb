@@ -1,0 +1,10 @@
+<h1>Publics#search</h1>
+
+<p>Buscar restaurantes en la ciudad</p>
+
+
+<%= form_tag({controller: "restaurants", action: "list_for_city"}, method: "get")%> 
+
+<%= label_tag(:city_id, "Seleccione Ciudad") %>
+<%= select_tag(:city_id, options_for_select(@cities )) %>
+<%= submit_tag("Send") %>
