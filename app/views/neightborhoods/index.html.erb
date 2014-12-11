@@ -13,7 +13,7 @@
     <% @neightborhoods.each do |neightborhood| %>
       <tr>
         <td><%= neightborhood.name %></td>
-        <td><%= neightborhood.city %></td>
+        <td><%= neightborhood.city.name %></td>
         <td><%= link_to 'Show', neightborhood %></td>
         <td><%= link_to 'Edit', edit_neightborhood_path(neightborhood) %></td>
         <td><%= link_to 'Destroy', neightborhood, method: :delete, data: { confirm: 'Are you sure?' } %></td>

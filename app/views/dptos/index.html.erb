@@ -11,7 +11,7 @@
   <tbody>
     <% @dptos.each do |dpto| %>
       <tr>
-        <td><%= dpto.name %></td>
+        <td><%= dpto.name %></td> 
         <td><%= link_to 'Show', dpto %></td>
         <td><%= link_to 'Edit', edit_dpto_path(dpto) %></td>
         <td><%= link_to 'Destroy', dpto, method: :delete, data: { confirm: 'Are you sure?' } %></td>

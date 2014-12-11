@@ -61,6 +61,29 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def list_for_city
+    city = City.find(params[:city_id])
+
+    neightborhoods = city.neightborhoods
+    @restaurants = Array.new
+    neightborhoods.each do |nei|
+      nei.restaurants.each do |rest|
+        restaurant = Hash.new
+        restaurant["id"] = rest.id 
+        restaurant["name"] = rest.name 
+        restaurant["nit"] = rest.nit 
+        restaurant["address"] = rest.address 
+        restaurant["n"] = nei.name 
+
+        @restaurants.push(restaurant)
+      end
+
+    end
+
+    puts "=========OBJECT Restaurant================= #{@restaurants}"
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
