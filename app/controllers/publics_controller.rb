@@ -3,7 +3,7 @@ class PublicsController < ApplicationController
   end
 
   def search
-  	@cities = City.all.map { |e| [e.name, e.id] }
+  	 @cities = City.all.map { |e| [e.name, e.id] }
   end
 
   def contact

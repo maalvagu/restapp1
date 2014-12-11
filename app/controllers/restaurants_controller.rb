@@ -61,14 +61,16 @@ class RestaurantsController < ApplicationController
     end
   end
 
+
+
   def list_for_city
     city = City.find(params[:city_id])
 
-    neightborhoods = city.neightborhoods
-    @restaurants = Array.new
+    neightborhoods = city.neightborhoods 
+    @restaurants = Array.new              #El Arroa indica que es variable Global
     neightborhoods.each do |nei|
       nei.restaurants.each do |rest|
-        restaurant = Hash.new
+        restaurant = Hash.new             # 
         restaurant["id"] = rest.id 
         restaurant["name"] = rest.name 
         restaurant["nit"] = rest.nit 
