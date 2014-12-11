@@ -1,0 +1,22 @@
+<h1><%= @restaurants[0]["name"] %></h1>
+
+
+
+
+
+<table BORDER="2">
+<% @restaurants.each do |rest|%>
+<tr>
+	<th>Nombre</th>
+	<th>Barrio</th>
+</tr>
+
+<tr>
+	<td>
+		<%= rest["name"]  %>
+	</td>
+	<TD>
+		<%= rest["n"] %></TD>
+	
+<% end %>
+</table>
