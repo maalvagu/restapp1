@@ -21,8 +21,13 @@
 </p>
 
 <p>
+  <strong>City:</strong>
+  <%= @restaurant.city.name %>
+</p>
+
+<p>
   <strong>Neightborhood:</strong>
-  <%= @restaurant.neightborhood.name %>
+  <%= @restaurant.neightborhood %>
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |

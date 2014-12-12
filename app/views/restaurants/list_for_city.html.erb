@@ -1,20 +1,21 @@
-<h1><%= @restaurants[0]["name"] %></h1>
+<h1><%= @restaurants[0].name %></h1>
 
 
 
 <table BORDER="2">
-<% @restaurants.each do |rest|%>
 <tr>
 	<th>Nombre</th>
 	<th>Barrio</th>
 </tr>
+<% @restaurants.each do |rest|%>
+
 
 <tr>
 	<td>
-		<%= rest["name"]  %>
+		<%= rest.name  %>
 	</td>
 	<TD>
-		<%= rest["n"] %></TD>
+		<%= rest.neightborhood %></TD>
 	
 <% end %>
 </table>

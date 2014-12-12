@@ -63,27 +63,36 @@ class RestaurantsController < ApplicationController
 
 
 
+  # def list_for_city
+  # #  city = City.find(params[:city_id])
+
+  #   neightborhoods = city.neightborhoods 
+  #   @restaurants = Array.new              #El Arroa indica que es variable Global
+  #   neightborhoods.each do |nei|
+  #     nei.restaurants.each do |rest|
+  #       restaurant = Hash.new             # 
+  #       restaurant["id"] = rest.id 
+  #       restaurant["name"] = rest.name 
+  #       restaurant["nit"] = rest.nit 
+  #       restaurant["address"] = rest.address 
+  #       restaurant["n"] = nei.name 
+
+  #       @restaurants.push(restaurant)
+  #     end
+
+  #   end
+
+  #   puts "=========OBJECT Restaurant================= #{@restaurants}"
+
+  # end
+
   def list_for_city
     city = City.find(params[:city_id])
 
-    neightborhoods = city.neightborhoods 
-    @restaurants = Array.new              #El Arroa indica que es variable Global
-    neightborhoods.each do |nei|
-      nei.restaurants.each do |rest|
-        restaurant = Hash.new             # 
-        restaurant["id"] = rest.id 
-        restaurant["name"] = rest.name 
-        restaurant["nit"] = rest.nit 
-        restaurant["address"] = rest.address 
-        restaurant["n"] = nei.name 
-
-        @restaurants.push(restaurant)
-      end
-
-    end
+    @restaurants = city.restaurants
+    
 
     puts "=========OBJECT Restaurant================= #{@restaurants}"
-
   end
 
   private
@@ -94,6 +103,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :nit, :phone, :address, :neightborhood_id)
+      params.require(:restaurant).permit(:name, :nit, :phone, :address, :city_id, :neightborhood)
     end
 end

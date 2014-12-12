@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211152350) do
+ActiveRecord::Schema.define(version: 20141212145830) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -74,12 +74,13 @@ ActiveRecord::Schema.define(version: 20141211152350) do
     t.integer  "nit"
     t.string   "phone"
     t.string   "address"
-    t.integer  "neightborhood_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.string   "neightborhood"
   end
 
-  add_index "restaurants", ["neightborhood_id"], name: "index_restaurants_on_neightborhood_id"
+  add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
